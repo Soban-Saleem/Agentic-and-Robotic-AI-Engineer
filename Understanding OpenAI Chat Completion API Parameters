@@ -1,0 +1,84 @@
+# OpenAI Chat Completion API Parameters
+
+## Objective:
+This assignment aims to deepen the understanding of the parameters used with the OpenAI Chat Completion API. Below are explanations of important terms or parameters, described in simple terms.
+
+## Terms/Parameters:
+
+### 1. **Messages**
+   - **Purpose**: The `messages` parameter is used to provide the input the model will respond to. It contains a list of messages, each having a "role" and "content".
+   - **Example**:
+     ```python
+     messages = [{"role": "user", "content": "Hello!"}]
+     ```
+   - **How it works**: The `messages` parameter tells the model what the user said, and the model will generate a response based on this input.
+
+### 2. **Model**
+   - **Purpose**: The `model` parameter specifies which version of the AI model you want to use, such as `gpt-3.5-turbo` or `gpt-4`.
+   - **Example**:
+     ```python
+     model = "gpt-3.5-turbo"
+     ```
+   - **How it works**: The model version determines how the AI processes and responds to input. Newer models are generally more capable and accurate.
+
+### 3. **Max Completion Tokens**
+   - **Purpose**: This parameter sets a limit on the number of tokens (or "words") the model can generate in a response.
+   - **Example**:
+     ```python
+     max_tokens = 100
+     ```
+   - **How it works**: If `max_tokens = 100`, the model will generate a response that is at most 100 tokens long.
+
+### 4. **n**
+   - **Purpose**: The `n` parameter controls how many responses the model should generate for a single prompt.
+   - **Example**:
+     ```python
+     n = 3
+     ```
+   - **How it works**: If `n = 3`, the model will generate three different responses, and you can choose the best one.
+
+### 5. **Stream**
+   - **Purpose**: This parameter allows the response to be streamed in real-time, rather than waiting for the full response to be generated.
+   - **Example**:
+     ```python
+     stream = True
+     ```
+   - **How it works**: With `stream = True`, the model begins sending responses as soon as it starts generating them, allowing for faster interaction, especially for long responses.
+
+### 6. **Temperature**
+   - **Purpose**: The `temperature` parameter controls the randomness of the AI's responses. Higher values (like 1.0) make the responses more creative and varied, while lower values (like 0.2) make the responses more focused and deterministic.
+   - **Example**:
+     ```python
+     temperature = 0.7
+     ```
+   - **How it works**: If `temperature = 1.0`, the model's output will be more random and creative. If it's lower (like 0.2), the model will give more predictable answers.
+
+### 7. **Top_p**
+   - **Purpose**: The `top_p` parameter controls how the model selects words. It uses "nucleus sampling", where the model only considers the top `p` percentage of word choices.
+   - **Example**:
+     ```python
+     top_p = 0.9
+     ```
+   - **How it works**: A higher `top_p` value (like 0.9) allows the model to choose from a wider set of possible words, resulting in more varied responses. Lower values (like 0.2) restrict the model to the most likely choices, making the responses more predictable.
+
+### 8. **Tools**
+   - **Purpose**: The `tools` parameter allows the model to use external tools or APIs to enhance its responses. For example, you might use a calculator tool if the model needs to perform calculations.
+   - **Example**:
+     ```python
+     tools = ["calculator"]
+     ```
+   - **How it works**: With `tools = ["calculator"]`, the model can call a calculator tool to perform mathematical tasks that it might not normally handle directly.
+
+## How These Parameters Work Together:
+These parameters work in combination to shape how the model generates responses:
+- **Temperature** and **Top_p** control the creativity and variability of the model’s output.
+- **Max tokens** limits how long the model's response can be.
+- **Messages** guide the conversation, and the **model** specifies the engine used.
+- **n** allows generating multiple responses, and **stream** provides real-time responses.
+- **Tools** extend the model’s functionality, enabling it to perform actions like calculations or accessing external data.
+
+## Conclusion:
+By adjusting these parameters, you can fine-tune how the OpenAI model responds to different inputs. Whether you need more creative or precise answers, or if you need the model to perform specific tasks, these settings provide the flexibility to achieve the desired results.
+
+## References:
+- [OpenAI Documentation](https://platform.openai.com/docs/)
