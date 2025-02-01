@@ -1,0 +1,18 @@
+[project]
+name = "helloworld2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Soban", email = "wakeuptoreality9to5@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+helloworld2 = "helloworld2:func2"
+neo = "matrix.greet:greet"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
